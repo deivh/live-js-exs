@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>esercizi live</title>
+</head>
+<body>
+    <div class="container">
+        <p id="mainText"></p>
+    </div>
+    <!-- <h1>Il tuo rettangolo ha:</h1>
+    <h2 id="alt">Altezza:</h2>
+    <h2 id="larg">Larghezza:</h2>
+    <h2 id="ar">Area:</h2>
+    <h2 id="per">Perimetro</h2> -->
+
+    <script>
+        //ESERCIZIO PERIMETRO AREA
+        // var altezzaStr = prompt("Inserisci il valore dell'altezza" );
+        // console.log(altezzaStr);
+        // var altezza = parseInt(altezzaStr);
+        // console.log('altezza', altezza);
+        // var larghezzaStr = prompt("Inserisci il valore della larghezza");
+        // console.log(larghezzaStr);
+        // var larghezza = parseInt(larghezzaStr);
+        // console.log('larghezza', larghezza);
+        // var area = larghezza * altezza;
+        // console.log('area' , area);
+        // var perimetro = ((altezza + larghezza) * 2);
+        // console.log ('perimetro' , perimetro);
+
+        //  document.getElementById('alt').innerHTML = 'Altezza: ' + altezza;
+        //  document.getElementById('larg').innerHTML = 'Larghezza: ' + larghezza;
+        //  document.getElementById('ar').innerHTML = 'Area: ' + area;
+        //  document.getElementById('per').innerHTML = 'Perimetro: ' + perimetro;
+
+
+        //ESERCIZIO MAGGIORE MINORE
+        // var num1 = parseInt(prompt("Inserisci un numero"));
+        // var num2 = parseInt(prompt("Inserisci un altro numero"));
+        // console.log(num1, num2);
+        // if (num1 > num2) {
+        //     document.getElementById('mainText').innerHTML = "Il maggiore è " + num1;
+        // } else if (num1 < num2) {
+        //     document.getElementById('mainText').innerHTML = "Il maggiore è " + num2;
+        // } else {
+        //     document.getElementById('mainText').innerHTML = "I numeri sono uguali";
+
+        // }
+
+
+        //ESERCIZIO PAROLE_1
+        // var word1 = prompt("Inserisci una parola");
+        // var word1Lng = word1.length;
+        // console.log(word1, word1Lng);
+        // var word2 = prompt("Inserisci un'altra parola");
+        // var word2Lng = word2.length;
+        // console.log(word2, word2Lng);
+        // if (word1Lng > word2Lng) {
+        //     document.getElementById('mainText').innerHTML = word2 + " " +  word1;
+        // } else if ((word1Lng < word2Lng) || (word1Lng == word2Lng)) {
+        //     document.getElementById('mainText').innerHTML = word1 + " " + word2;
+        // } 
+
+        var num = [];
+        console.log(num);
+        var somma = 0;
+        for (var i=0; i < 5; i++) {
+            num.push(parseInt(prompt("Inserisci un numero")))
+            console.log(num[i])
+            somma = somma + num[i];
+        }
+        console.log(num);
+        console.log("La somma è: ", somma);
+        document.getElementById("mainText").innerHTML= "La somma è: " + somma;
+    </script>
+</body>
+</html>
