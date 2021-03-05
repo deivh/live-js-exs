@@ -37,6 +37,36 @@
         //  document.getElementById('ar').innerHTML = 'Area: ' + area;
         //  document.getElementById('per').innerHTML = 'Perimetro: ' + perimetro;
 
+        //ESERCIZI ARRAY
+        // var arr = ['pippo', 10, 'topolino'];
+        // console.log('arr', typeof arr, arr);
+        // arr.push('HELLO');
+        // // arr[0] = 10000;
+        // console.log('arr[0]', (typeof arr[0]), arr[0]);
+        // console.log('arr[1]', (typeof arr[1]), arr[1]);
+        // console.log('arr[2]', (typeof arr[2]), arr[2]);
+        // console.log('arr[3]', (typeof arr[3]), arr[3]);
+        // // arr[arr.length - 1] = 'CIAO';
+        // // console.log('arr', typeof arr, arr);
+        // // console.log('arr lng', arr.length); esempio di giovanni
+
+
+        // var arr = [ 1, 5, 345, 23, 65, 77, 54, 234, 76, 12, 3 ];
+        // console.log(arr, arr.length);
+        // for ( var i=1; i <arr.length; i = i + 2) {
+        //     var arrOdd = arr[i];
+        //     console.log(arrOdd);
+        // }
+
+
+        // var arr = [ 'hello', 'world', 'ciao', 'mondo', 'hola', 'mundo' ];
+        // for (var i=0; i < arr.length; i++) {
+        //     var word = arr[i];
+        //     var wordLngth = word.length;
+        //     if (wordLngth % 2 == 0) {
+        //         console.log(word);
+        //     }
+        // }
 
         //ESERCIZIO MAGGIORE MINORE
         // var num1 = parseInt(prompt("Inserisci un numero"));
@@ -65,17 +95,38 @@
         //     document.getElementById('mainText').innerHTML = word1 + " " + word2;
         // } 
 
+        //ESERCIZIO SOMMA ARRAY
+        // var num = [];
+        // console.log(num);
+        // var somma = 0;
+        // for (var i=0; i < 5; i++) {
+        //     num.push(parseInt(prompt("Inserisci un numero")))
+        //     console.log(num[i])
+        //     somma = somma + num[i];
+        // }
+        // console.log(num);
+        // console.log("La somma è: ", somma);
+        // document.getElementById("mainText").innerHTML= "La somma è: " + somma;
+
+        //          SOMMA INCREMENTALE
+        // var somma = 0;
+        // for (var i=0; i <5; i++) {
+        //     num = (parseInt(prompt("Inserisci un numero")))
+        //     console.log(num);
+        //     somma = somma + num;
+        // }
+        // console.log("La somma è: ", somma);
+        // document.getElementById("mainText").innerHTML= "La somma è: " + somma;
+        
         var num = [];
         console.log(num);
-        var somma = 0;
-        for (var i=0; i < 5; i++) {
-            num.push(parseInt(prompt("Inserisci un numero")))
-            console.log(num[i])
-            somma = somma + num[i];
+        for (i=0; i<6; i++) {
+            var odd=parseInt(prompt("Inserisci un numero"));
+            if ((odd % 2) == 1) {
+                num.push(odd)
+                console.log(num)
+            }
         }
-        console.log(num);
-        console.log("La somma è: ", somma);
-        document.getElementById("mainText").innerHTML= "La somma è: " + somma;
     </script>
 </body>
 </html>
