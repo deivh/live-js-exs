@@ -118,14 +118,36 @@
         // console.log("La somma è: ", somma);
         // document.getElementById("mainText").innerHTML= "La somma è: " + somma;
         
-        var num = [];
-        console.log(num);
-        for (i=0; i<6; i++) {
-            var odd=parseInt(prompt("Inserisci un numero"));
-            if ((odd % 2) == 1) {
-                num.push(odd)
-                console.log(num)
-            }
+        // var num = [];
+        // console.log(num);
+        // for (i=0; i<6; i++) {
+        //     var odd=parseInt(prompt("Inserisci un numero"));
+        //     if ((odd % 2) == 1) {
+        //         num.push(odd)
+        //         console.log(num)
+        //     }
+        // }
+
+
+        // Il software deve chiedere per 10 volte all'utente di inserire un numero. Il programma stampa la somma di tutti i numeri inseriti
+        // var i=0;
+        // var sum=0;
+        // var num;
+        // while (i<10) {
+        //     num=parseInt(prompt("Inserisci un numero"));
+        //     sum = sum + num;
+        //     console.log(i++, " - " , num , "somma= ", sum);
+        // }
+        // document.getElementById('mainText').innerHTML="La somma dei 10 numeri è: " + sum;
+
+
+        // Richiedere all'utente dei valori finche' la relativa somma non supera il 50
+        var sum=0;
+        var num=1;
+        while (num > 0) {
+            num=parseInt(prompt("Inserisci un numero"));
+            sum = sum + num;
+            console.log(sum , num);
         }
     </script>
 </body>
