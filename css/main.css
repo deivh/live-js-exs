@@ -10,11 +10,28 @@
     width: 100vw;
     height: 100vh;
     background-color: chocolate;
+    justify-content: center;
 }
 
 p {
     color: white;
     margin: auto;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#pair {
+    color: green;
+    display: flex;
+    align-self: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#odd {
+    color:red;
+    display: flex;
+    align-self: center;
     font-size: 25px;
     font-weight: bold;
 }
