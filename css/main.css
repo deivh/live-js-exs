@@ -13,6 +13,13 @@
     justify-content: center;
 }
 
+.container div {
+    display: flex;
+    align-self: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
 p {
     color: white;
     margin: auto;
@@ -22,16 +29,17 @@ p {
 
 #pair {
     color: green;
-    display: flex;
-    align-self: center;
-    font-size: 25px;
-    font-weight: bold;
 }
 
 #odd {
     color:red;
-    display: flex;
-    align-self: center;
-    font-size: 25px;
-    font-weight: bold;
+    
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
 }
