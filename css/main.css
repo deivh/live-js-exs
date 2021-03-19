@@ -1,45 +1,39 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-
-.container {
+ul {
+    list-style: none;
+}
+footer {
+    width: 100%;
+    min-height: 50px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    color: purple;
+}
+.container {
     width: 100vw;
     height: 100vh;
-    background-color: chocolate;
-    justify-content: center;
-}
-
-.container div {
     display: flex;
-    align-self: center;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-p {
+    flex-direction: column;
+    background-color: chocolate;
     color: white;
+}
+.container * {
     margin: auto;
-    font-size: 25px;
-    font-weight: bold;
 }
-
-#pair {
-    color: green;
-}
-
-#odd {
-    color:red;
-    
-}
-
-.green {
-    color: green;
-}
-
-.red {
+.pair {
     color: red;
+}
+.odd {
+    color: green;
+}
+#burger-name {
+    margin-bottom: 20px;
+}
+#coupon {
+    margin: 20px 0;
 }
