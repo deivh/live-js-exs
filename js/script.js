@@ -1,54 +1,35 @@
-// TODO NOW
-// - alert con "fine giro" dopo 10 secondi (setTimeout)
-// - stampare in pagina cronometro che arriva a 10 secondi (setInterval)
-
-// VERSIONE BASE (setTimeout)
-// function readyMeal() {
-//   alert('Pasta pronta!');
-// }
-// function init() {
-//   var ms = parseInt(prompt('Quanti secondi mancano?')) * 1000;
-//   setTimeout(readyMeal, ms)
-// }
-// VERSIONE COUNTDONW (setInterval)
-// var sec;
-// var clock;
-// function tick() {
-//   document.getElementById('text').innerHTML = sec--;
-//   if (sec < 0) {
-//     clearInterval(clock);
-//     document.getElementById('text').innerHTML = 'Pasta pronta!';
-//   }
-// }
-// function init() {
-//   sec = parseInt(prompt('Quanti secondi mancano?'));
-//   clock = setInterval(tick, 1000);
-// }
-// init();
-
-
-
-//fine giro 
-function lap() {
-    alert('Fine giro!')
-}
-
-function initLap() {
-    setTimeout(lap, 10000);
-}
-
-
-//cronometro
-var clock;
-var sec;
-function tick(){
-    document.getElementById('text').innerHTML = sec++;
-    if (sec>10) {
-        clearInterval(clock);
-        document.getElementById('text').innerHTML = "Tempo scaduto!";
+// GOAL: associare evento ai bottoni 
+// + e - in modo da far variare il numero al centro di +/- 1
+function decrease() {
+    var valueClick =$('#target').text();
+    valueClick--;
+    if (valueClick<0) {
+        alert("COSA STAI FACENDO FOLLE NON ESISTE NULLA SOTTO LO ZERO");
+        valueClick = 0;
     }
+    $("#target").text(valueClick);
+
+} 
+
+function increase() {
+    var valueClick =$('#target').text();
+    valueClick++;
+    
+    if (valueClick>20) {
+        alert("COSA STAI FACENDO *scemino* NON ESISTE NULLA SOPRA IL VENTI");
+        valueClick = 20;
+    }
+    $("#target").text(valueClick);
 }
 
-function initCrono() {
-    clock = setInterval(tick, 1000);
+
+function init(value) {
+$('#minus').click(decrease);
+$('#plus').click(increase);
+$('#target').text(value);
 }
+
+value = 10;
+init(value);
+
+
