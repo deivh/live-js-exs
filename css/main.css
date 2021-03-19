@@ -45,3 +45,8 @@ footer {
 button {
     padding: 15px;;
 }
+
+#circle {
+    background-color: green;
+    border-radius: 50%;
+}
