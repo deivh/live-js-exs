@@ -1,9 +1,17 @@
 // GOAL: associare evento ai bottoni 
 // + e - in modo da far variare il numero al centro di +/- 1
+function randomColor() {
+    var back = ["#ff0000","blue","gray","yellow", "green" , "greenyellow", "purple" ,"pink", "violet" ];
+    var rand = back[Math.floor(Math.random() * back.length)];
+    return rand;
+}
+
 function decreasew() {
     var valueClick =$('#targetw').text();
     valueClick--;
     $('#circle').css('width', (valueClick * 10) + 'px');
+    $('#circle').css('background', randomColor)
+    
     // $('#circle').css('height', valCircle);
     if (valueClick<0) {
         alert("COSA STAI FACENDO FOLLE NON ESISTE NULLA SOTTO LO ZERO");
@@ -17,6 +25,7 @@ function increasew() {
     var valueClick =$('#targetw').text();
     valueClick++;
     $('#circle').css('width', (valueClick * 10) + 'px');
+    $('#circle').css('background', randomColor)
     // $('#circle').css('height', valCircle);
     if (valueClick>20) {
         alert("COSA STAI FACENDO *scemino* NON ESISTE NULLA SOPRA IL VENTI");
@@ -26,11 +35,12 @@ function increasew() {
 }
 
 function decreaseh() {
-    var valueClick =$('#target').text();
+    var valueClick =$('#targeth').text();
     valueClick--;
     $('#circle').css('height', (valueClick * 10) + 'px');
+    $('#circle').css('background', randomColor)
     // $('#circle').css('height', valCircle);
-    if (valueClick<0) {
+    if (valueClick < 0) {
         alert("COSA STAI FACENDO FOLLE NON ESISTE NULLA SOTTO LO ZERO");
         valueClick = 0;
     }
@@ -42,6 +52,7 @@ function increaseh() {
     var valueClick =$('#targeth').text();
     valueClick++;
     $('#circle').css('height', (valueClick * 10) + 'px');
+    $('#circle').css('background', randomColor)
     // $('#circle').css('height', valCircle);
     if (valueClick>20) {
         alert("COSA STAI FACENDO *scemino* NON ESISTE NULLA SOPRA IL VENTI");
