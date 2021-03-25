@@ -1,38 +1,49 @@
-function getRandomValue(min, max) {
-    var localMin = min;
-    var localMax = max - min + 1;
-    return Math.floor(Math.random() * localMax) + localMin;
+// Crea un array di 10 oggetti che rappresentano una
+// zucchina, indicando per ognuna varietà, peso e lunghezza.
+// Calcola quanto pesano tutte le zucchine.
+
+function arrObj() {
+  
 }
-function addRandomValues() {
-    $('.box').click(function() {
-        var clickedBtn = $(this);
-        var clickedSpan = clickedBtn.find('span');
-        var isSpanVisible = clickedSpan.is(':visible');
-        if (isSpanVisible) {
-            clickedBtn.remove();
-        } else {
-            var clickedValue = clickedSpan.text();
-            if (clickedValue % 2 == 0) {
-                clickedBtn.toggleClass('bg-green');
-            } else {
-                clickedBtn.toggleClass('bg-red');
-            }
-            clickedSpan.toggle();
+function objCreate(boxCount) {
+    var arrZucch = [
+        {
+            'varietà': 'my',
+            'peso': 15,
+            'lunghezza': 10
+        },
+        {
+            'varietà': 'my',
+            'peso': 15,
+            'lunghezza': 10
+        },
+        {
+            'varietà': 'my',
+            'peso': 15,
+            'lunghezza': 10
+        },
+        {
+            'varietà': 'my',
+            'peso': 15,
+            'lunghezza': 10
+        },
+        {
+            'varietà': 'my',
+            'peso': 15,
+            'lunghezza': 10
         }
-    });
-}
-function boxGenerator(boxCount) {
-    var boxes = $('.boxes');
-    for (var i=0;i<boxCount;i++) {
-        var rnd = getRandomValue(1, 100);
-        boxes.append('<div class="box"><span class="text hide">' 
-            + rnd + '</span></div>');
+    ]
+    
+    var sum = 0;
+    for (var i=0; i<arrZucch.length; i++){
+        sum += arrZucch[i].peso;
     }
+    console.log(sum);
+    
 }
 function init() {
-    var boxCount = parseInt(prompt('Dimmi il numero di quadratini'));
-    boxGenerator(boxCount);
-    addRandomValues();
+    objCreate();
+ 
 }
 // JQUERY
 $(document).ready(init);
