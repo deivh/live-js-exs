@@ -2,51 +2,42 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-ul {
-    list-style: none;
-}
-footer {
-    width: 100%;
-    min-height: 50px;
-    display: flex;
-    justify-content: space-between;
-    background-color: white;
-    color: purple;
+    font-family: 'Lato';
 }
 .container {
-    width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: chocolate;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: purple;
     color: white;
 }
-.container * {
+.container > * {
     margin: auto;
 }
-.pair {
-    color: red;
+.boxes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
-.odd {
-    color: green;
+.box {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background-color: darkslategray;
 }
-#burger-name {
-    margin-bottom: 20px;
+.box span {
+    margin: auto;
 }
-#coupon {
-    margin: 20px 0;
-}
-
-#target {
-    font-size: 20px;
-}
-
-button {
-    padding: 15px;;
+.bg-red {
+    background-color: red;
 }
 
-#circle {
+.bg-green {
     background-color: green;
-    border-radius: 50%;
+}
+.text {
+    display: none;
 }
