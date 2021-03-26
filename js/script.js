@@ -1,22 +1,40 @@
-// Scrivi una funzione che fonda due array (aventi lo stesso
-//     numero di elementi) prendendo alternativamente gli
-//     elementi da uno e dall'altro
-//     es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+// Creare un array di oggetti: ogni oggetto descriverà 
+// una bici da corsa con le seguenti proprietà: nome e peso. 
+// Stampare a schermo la bici con peso minore.
 
-function fusion() {
-    var arr1 = ['a','b','c'];
-    var arr2 = [1,2,3];
-    var fuseArr = [];
-    for (i=0; i<arr1.length; i++) {
-       var a1 = arr1[i];
-       var a2 = arr2[i];
-        fuseArr.push(a1);
-        fuseArr.push(a2);
+function es(){
+    let arr = [
+        {
+            'nome': 'Bruno',
+            'peso': 22
+        },
+        {
+            'nome': 'Massimo',
+            'peso': 2
+        },
+        {
+            'nome': 'Genny',
+            'peso': 15
+        },
+        {
+            'nome': 'ErnestoBruno',
+            'peso': 65
+        }
+        
+    ];
+    let arrMin = arr[0].peso;
+    for (let i=0; i<arr.length;i++) {
+        
+        if (arrMin > arr[i].peso) {
+            arrMin = arr[i].peso;
+            var selector = i;
+        }
     }
-    console.log(fuseArr)
+    console.log(arr[selector])
 }
+
 function init() {
-    fusion();
+es();
 }
-// JQUERY
-$(document).ready(init);
+
+$(document).ready(init)
