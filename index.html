@@ -14,9 +14,21 @@
     <body>
         <div id="app" class="container">
             <div class="row">
-                <h1 :class="bgClass">{{ clickCounter }}</h1>
-                <button v-on:click="clickCounter += 1">Aggiungi un posto a tavola che c'è un amico in più</button>
-                <button v-on:click="clickCounter -= 1">Togli una sedia</button>
+                <div v-if="img1">
+                    <img  src="img/ffxiv.jfif" alt="">
+
+                </div>
+                <div v-else >
+                    <img src="img/ffxiii.jfif" alt="">
+
+                </div>
+                <button v-on:click="img1= false">Immagine 1</button>
+                <button v-on:click="img1= true">Immagine 2</button>
+                <ul>
+                    <li v-for="pair in numbers">
+                        {{ pair }}
+                    </li>
+                </ul>
             </div>            
         </div>
     </body>
