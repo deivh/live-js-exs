@@ -4,7 +4,7 @@ function initVue() {
         data: {
             'img1' : true,
             'clickCounter': 0,
-            'numbers': numbersPair()
+            'numbers': []
         },
         methods: {
             colorChanger: function() {

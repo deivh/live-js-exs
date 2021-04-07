@@ -41,3 +41,7 @@
 .text {
     display: none;
 }
+img {
+    max-width: 600px;
+    height: auto;
+}
