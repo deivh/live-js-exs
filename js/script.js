@@ -1,40 +1,27 @@
-// Creare un array di oggetti: ogni oggetto descriverà 
-// una bici da corsa con le seguenti proprietà: nome e peso. 
-// Stampare a schermo la bici con peso minore.
-
-function es(){
-    let arr = [
-        {
-            'nome': 'Bruno',
-            'peso': 22
+function initVue() {
+    new Vue({
+        el: '#app', 
+        data: {
+            'bgClass': 'bg-red',
+            'clickCounter': 0
         },
-        {
-            'nome': 'Massimo',
-            'peso': 2
-        },
-        {
-            'nome': 'Genny',
-            'peso': 15
-        },
-        {
-            'nome': 'ErnestoBruno',
-            'peso': 65
+        methods: {
+            colorChanger: function() {
+                if (this.bgClass == 'bg-red') {
+                    this.bgClass = 'bg-green';
+                } else {
+                    this.bgClass = 'bg-red';
+                }
+            },
+            clickCount: function() {
+                this.clickCounter +=1;
+            }
         }
-        
-    ];
-    let arrMin = arr[0].peso;
-    for (let i=0; i<arr.length;i++) {
-        
-        if (arrMin > arr[i].peso) {
-            arrMin = arr[i].peso;
-            var selector = i;
-        }
-    }
-    console.log(arr[selector])
+    });
 }
 
 function init() {
-es();
+    initVue();
+    // initJQuery();
 }
-
-$(document).ready(init)
+$(init);

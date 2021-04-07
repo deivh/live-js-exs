@@ -3,18 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <!-- JQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <title>boxs</title>
+        <!-- VueJS -->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Vue - intro</title>
         <link rel="stylesheet" href="css/main.css">
         <script src="js/script.js" charset="utf-8"></script>
     </head>
     <body>
-        <div class="container">
-            <h1>Hello world</h1>
-            <div class="boxes">
-            </div>
+        <div id="app" class="container">
+            <div class="row">
+                <h1 :class="bgClass">{{ clickCounter }}</h1>
+                <button v-on:click="clickCounter += 1">Aggiungi un posto a tavola che c'è un amico in più</button>
+                <button v-on:click="clickCounter -= 1">Togli una sedia</button>
+            </div>            
         </div>
     </body>
 </html>
