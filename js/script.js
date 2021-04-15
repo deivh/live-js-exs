@@ -4,7 +4,8 @@ function initVue() {
         data: {
             'img1' : true,
             'clickCounter': 0,
-            'numbers': 10
+            'numbers': 10,
+            'rest': 0
         },
         methods: {
             colorChanger: function() {
@@ -19,7 +20,7 @@ function initVue() {
             },
             numbersPair: function() {
                 numbers = [];
-                for (let i=1; i<11;i++) {
+                for (let i=1; i<this.numbers;i++) {
                     number = i;
                     if (i%2==0) {
                         numbers.push(number)
@@ -27,6 +28,9 @@ function initVue() {
                 }
                 console.log(numbers);
                 return numbers;
+            },
+            flipValue: function(){
+                this.res = this.res == 1 ? 0 : 1;
             }
         }
     });
