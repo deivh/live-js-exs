@@ -1,43 +1,33 @@
-function initVue() {
-    new Vue({
-        el: '#app', 
-        data: {
-            'img1' : true,
-            'clickCounter': 0,
-            'numbers': 10,
-            'rest': 0
+// TODO NOW: modificare il seguente codice per far apparire al click
+//  del bottone una box rossa nel caso in cui si riceva un true come risposta dal server (API), verde altrimenti
+
+
+function addClickListener() {
+    const btn = $('#btn');
+    btn.click(boxGenerator);
+}
+function boxGenerator() {
+    $.ajax({
+        url: 'https://flynn.boolean.careers/exercises/api/random/boolean',
+        method: 'GET',
+        success: function(data) {
+            const res = data.response;
+            generateBox(res);
         },
-        methods: {
-            colorChanger: function() {
-                if (this.bgClass == 'bg-red') {
-                    this.bgClass = 'bg-green';
-                } else {
-                    this.bgClass = 'bg-red';
-                }
-            },
-            clickCount: function() {
-                this.clickCounter +=1;
-            },
-            numbersPair: function() {
-                numbers = [];
-                for (let i=1; i<this.numbers;i++) {
-                    number = i;
-                    if (i%2==0) {
-                        numbers.push(number)
-                    }
-                }
-                console.log(numbers);
-                return numbers;
-            },
-            flipValue: function(){
-                this.res = this.res == 1 ? 0 : 1;
-            }
+        error: function() {
+            console.log('error');
         }
     });
 }
-
-function init() {
-    initVue();
-    // initJQuery();
+function generateBox(type) {
+    const target = $('#target');
+    if (type) {
+        target.append('<div class="box bg-red"></div>');
+    } else {
+        target.append('<div class="box bg-green"></div>');
+    }
 }
-$(init);
+function init() {
+   addClickListener();
+}
+document.addEventListener('DOMContentLoaded', init);

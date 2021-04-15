@@ -2,37 +2,30 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- JQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!-- VueJS -->
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <title>Vue - intro</title>
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/script.js" charset="utf-8"></script>
+        <title>Slider</title>
+        <!-- font awesame -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <!-- bootstrap v4 -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- vue -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" href="css/mains.css">
+        <script src="js/script.js"></script>
     </head>
     <body>
-        <div id="app" class="container">
-            <div class="row">
-                <div v-if="img1">
-                    <img  src="img/ffxiv.jfif" alt="">
-
+        <div id="app" class="container vh-100">
+            <div class="row h-100">
+                <div class="col-12 d-flex">
+                    <div class="m-auto">
+                        <button id="btn" class="btn btn-primary">ADD BOX</button>
+                        <div id="target" class="d-flex">
+                        </div>
+                    </div>
                 </div>
-                <div v-else >
-                    <img src="img/ffxiii.jfif" alt="">
-
-                </div>
-                <button v-on:click="img1= false">Immagine 1</button>
-                <button v-on:click="img1= true">Immagine 2</button>
-                <button v-on:click="numbers+=1">+</button>
-                <button v-on:click="">Flip Odd/Pair</button>
-                <ul>
-                    <!-- <li v-for="pair in numbers">
-                        {{ pair }}
-                    </li> -->
-                    <li v-for="pair in numbers">{{ pair * 2}}</li>
-                </ul>
-            </div>            
+            </div>
         </div>
     </body>
 </html>
