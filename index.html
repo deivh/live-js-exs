@@ -8,20 +8,42 @@
         <!-- bootstrap v4 -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <!-- vue -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- axios -->
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <!-- css -->
-        <link rel="stylesheet" href="css/mains.css">
-        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <div id="app" class="container vh-100">
             <div class="row h-100">
                 <div class="col-12 d-flex">
                     <div class="m-auto">
-                        <button id="btn" class="btn btn-primary">ADD BOX</button>
-                        <div id="target">
+                        <h1>Box:</h1>
+                        <div id="target" class="d-flex">
+                            <!-- STRATEGIA 1
+                            <div 
+                                v-for="value in values" 
+                                class="box d-flex"
+                                :class="value % 2 == 0 ? 'bg-red' : 'bg-green'"
+                                >
+                                <h1 class="m-auto">
+                                    {{ value }}
+                                </h1>
+                            </div> -->
+                            <!-- STRATEGIA 2 -->
+                            <div 
+                                v-for="value in values" 
+                                class="box d-flex"
+                                :class="value.class"
+                                >
+                                <h1 class="m-auto">
+                                    {{ value.value }}
+                                </h1>
+                            </div>
                         </div>
                     </div>
                 </div>

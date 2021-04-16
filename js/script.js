@@ -1,33 +1,40 @@
-// TODO NOW: modificare l'esercizio in modo da generare box 
-// sempre dello stesso colore ma riportanti la cifra scaricata dalla seguente API
-
-function addClickListener() {
-    const btn = $('#btn');
-    btn.click(boxGenerator);
-}
-function boxGenerator() {
-    $.ajax({
-        url: 'https://flynn.boolean.careers/exercises/api/random/int',
-        method: 'GET',
-        success: function(data) {
-            const num = data.response;
-            const res = true;
-            generateBox(res, num);
+// attraverso vue&axios scaricare 10 numeri interi e produrre le box
+// corrispondenti, colorandone il bg verde nel caso di numeri pari
+// e rossi nel caso di numeri dispari
+function initVue() {
+    new Vue({
+        el: '#app',
+        data: {
+            values: []
         },
-        error: function() {
-            console.log('error');
+        mounted() {
+            axios.get('https://flynn.boolean.careers/exercises/api/array/integers',
+                {
+                    params: {
+                        min: 1,
+                        max: 100,
+                        items: 10
+                    }
+                })
+                .then(data => {
+                    // STRATEGIA 1
+                    // this.values = data.data.response;
+                    // STRATEGIA 2
+                    const values = data.data.response;
+                    for (let i=0;i<values.length;i++) {
+                        const value = values[i];
+                        const isPair = value % 2 == 0;
+                        this.values.push({
+                            value,
+                            class: isPair ? 'bg-green' : 'bg-red'
+                        });
+                    }
+                })
+                .catch(() => console.log('error'));
         }
     });
 }
-function generateBox(type, num) {
-    const target = $('#target');
-    if (type) {
-        target.append('<div class="box bg-red">', + num ,'</div>');
-    } else {
-        target.append('<div class="box bg-green"></div>');
-    }
-}
 function init() {
-   addClickListener();
+    initVue();
 }
 document.addEventListener('DOMContentLoaded', init);
